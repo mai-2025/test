@@ -5,7 +5,7 @@ class Student(models.Model):
      _name='student'
      _rec_name = 'st_name'
 
-     st_name=fields.Char(required=True)
+     st_name=fields.Char(required=False)
      book_ids=fields.One2many('book.book','student_id')
      active_name =fields.Boolean(default=False)
      st_code=fields.Char(compute='_compute_st_code' ,copy=False)
