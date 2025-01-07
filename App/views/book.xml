@@ -14,13 +14,23 @@
                                 <field name="example_title" placeholder="Title"/>
                             </h1>
                         </div-->
-                            <group col="2">
+                            <group col="4">
                                 <field name="name"/>
                                 <field name="book_code"/>
                                 <field name="due_date"/>
                                 <field name="active"/>
-                                <field name="student_id"/>
-                                <field name="category_ids" widget="many2many_tags"/>
+                                <notebook>
+                                    <page string="CAT">
+                                        <field name="category_ids" widget="many2many_tags"/>
+
+                                    </page>
+                                </notebook>
+                                <field name="student_id"  domain="[('active_name', '=', True)]"/>
+                                <!--field name="level_ids" widget="many2many_tags"/-->
+                                                            <group col="2">
+
+                                <field name="price_book"/>
+                                                            </group>
 
                             </group>
                     </sheet>
@@ -66,6 +76,28 @@
 <!--                </p&ndash;&gt;-->
 <!--            </field>-->
         </record>
+
+         <!--record id="ModelName_form_inherit" model="ir.ui.view">
+            <field name="name">ProjectName.ModelName.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="book_id"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="readonly">True</attribute>
+                </xpath>
+            </field>
+        </record-->
+
+
+
+
+
+
+
 
           <menuitem name="book_list" id="book_menu_sub_id" parent="book_menu_id"
                   action="book_action_id"/>

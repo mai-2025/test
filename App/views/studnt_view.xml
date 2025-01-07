@@ -17,9 +17,10 @@
                             <group col="2">
                                 <field name="st_name"/>
                                 <field name="st_code"/>
-                    <field name="child_ids" widget="many2many_tags"/>
+                    <field name="book_ids" widget="many2many_tags"/>
 
                             </group>
+
                     </sheet>
                 </form>
             </field>
@@ -29,10 +30,10 @@
             <field name="name">Book tree</field>
             <field name="model">student</field>
             <field name="arch" type="xml">
-                <tree string="studentTree">
+                <tree editable="top">
                     <!--field name="create_date"/-->
-                    <field name="st_code"/>
                     <field name="st_name"/>
+                    <field name="st_code"/>
 
 
                 </tree>
