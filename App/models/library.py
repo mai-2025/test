@@ -1,7 +1,7 @@
 
 from odoo import models,fields,api
-
 from odoo.exceptions import UserError ,ValidationError
+
 class LIB(models.Model):
     _name ='book.book'
     _description = "Book"

@@ -14,7 +14,7 @@
        'views/menu_book.xml',
        'views/book.xml',
        'views/studnt_view.xml',
-       #'views/student_payment_view.xml',
+       'views/student_payment_view.xml',
              ],
     'demo': ['Demo'],
     'installable': True,

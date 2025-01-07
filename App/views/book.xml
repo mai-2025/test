@@ -17,10 +17,11 @@
                             <group col="4">
                                 <field name="name"/>
                                 <field name="book_code"/>
+                                <!--field name="current_datetime"/-->
                                 <field name="due_date"/>
                                 <field name="active"/>
                                 <notebook>
-                                    <page string="CAT">
+                                    <page>
                                         <field name="category_ids" widget="many2many_tags"/>
 
                                     </page>
@@ -77,8 +78,8 @@
 <!--            </field>-->
         </record>
 
-         <!--record id="ModelName_form_inherit" model="ir.ui.view">
-            <field name="name">ProjectName.ModelName.form</field>
+         <record id="ModelName_form_inherit" model="ir.ui.view">
+            <field name="name">Book form</field>
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="priority" eval="8"/>
@@ -90,7 +91,7 @@
                     <attribute name="readonly">True</attribute>
                 </xpath>
             </field>
-        </record-->
+        </record>
 
 
 

@@ -1,4 +1,4 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+id,name,model_id:id,group_id:id,perm_create,perm_write,perm_read,perm_unlink
 book_access_id,Book Access,model_book_book,,1,1,1,1
 student_access_id,student Access,model_student,,1,1,1,1
 student_pay_access_id,student Payment Access,model_student_payment,,1,1,1,1
