@@ -7,7 +7,6 @@ class SaleCurrency(models.Model):
     _name = 'student.payment'
     _order = 'code_id'
 
-    st_name = fields.Char(required=True)
     st_pay_id=fields.Many2one('student')
     code_id=fields.Char(related='st_pay_id.st_code')
     tax=fields.Float()

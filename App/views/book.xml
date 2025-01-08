@@ -14,26 +14,26 @@
                                 <field name="example_title" placeholder="Title"/>
                             </h1>
                         </div-->
-                            <group col="4">
+                            <group col="2">
                                 <field name="name"/>
                                 <field name="book_code"/>
-                                <!--field name="current_datetime"/-->
                                 <field name="due_date"/>
                                 <field name="active"/>
+                                 <field name="student_id"  domain="[('active_name', '=', True)]"/>
+                                    <field name="price_book"/>
+                            </group>
+
                                 <notebook>
-                                    <page>
+                                    <page string="Category">
                                         <field name="category_ids" widget="many2many_tags"/>
 
                                     </page>
+                                     <page string="Note">
+                                     </page>
+
                                 </notebook>
-                                <field name="student_id"  domain="[('active_name', '=', True)]"/>
-                                <!--field name="level_ids" widget="many2many_tags"/-->
-                                                            <group col="2">
 
-                                <field name="price_book"/>
-                                                            </group>
 
-                            </group>
                     </sheet>
                 </form>
             </field>
@@ -43,10 +43,11 @@
             <field name="name">Book tree</field>
             <field name="model">book.book</field>
             <field name="arch" type="xml">
-                <tree string="Book Tree">
+                <tree string="Book Tree"  decoration-danger="is_due">
                     <!--field name="create_date"/-->
                     <field name="name"/>
-                    <field name="active"/>
+                    <field name="due_date"/>
+                    <field name="is_due"/>
 
                 </tree>
             </field>
@@ -67,10 +68,9 @@
 
         <record id="book_action_id" model="ir.actions.act_window">
             <field name="name">Book Action</field>
-            <field name="type">ir.actions.act_window</field>
             <field name="res_model">book.book</field>
             <!--field name="view_type">form</field-->
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,graph</field>
 <!--            <field name="help" type="html">-->
 <!--                &lt;!&ndash;p class="oe_view_nocontent_create">-->
 <!--                    There is no examples click here to add new ModelTitle.-->

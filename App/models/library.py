@@ -1,6 +1,7 @@
 
 from odoo import models,fields,api
 from odoo.exceptions import UserError ,ValidationError
+from datetime import date
 
 class LIB(models.Model):
     _name ='book.book'
@@ -8,6 +9,7 @@ class LIB(models.Model):
     name=fields.Char()
     book_code=fields.Integer()
     due_date=fields.Date()
+    is_due=fields.Boolean()
     active =fields.Boolean(default=True)
     student_id=fields.Many2one('student')
     category_ids = fields.Many2many(
@@ -30,3 +32,12 @@ class LIB(models.Model):
           if rec.price_book < 0.0:
             print(rec.name)
             raise ValidationError("Please inter positive value")
+
+    #Check the due date by Cron job
+    def check_overdue(self):
+        today = date.today()
+        print(today)
+        due_books = self.search([('due_date', '<', today), ('is_due', '=', False)])
+        for rec in due_books:
+            print(rec)
+            rec.is_due = True

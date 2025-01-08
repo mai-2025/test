@@ -2,3 +2,4 @@ id,name,model_id:id,group_id:id,perm_create,perm_write,perm_read,perm_unlink
 book_access_id,Book Access,model_book_book,,1,1,1,1
 student_access_id,student Access,model_student,,1,1,1,1
 student_pay_access_id,student Payment Access,model_student_payment,,1,1,1,1
+student_report_wizard_id,Sudent Access Report,model_report_wizard,,1,1,1,1
