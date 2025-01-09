@@ -6,12 +6,18 @@
         <field name="model">student.payment</field>
         <field name="arch" type="xml">
             <form string="Student Payment">
+                                 <!--field name="state" widget="status_bar"/-->
+                <header >
+                    <button name="confirm" type="object" string="Confirm"></button>
+                </header>
+                <button name="create_student_payment" type="object" string="Create Student Payment"></button>
+
                 <sheet>
                     <group>
                         <field name="st_pay_id"/>
                         <field name="code_id"/>
                         <field name="tax"/>
-                        <group col="4">
+                        <group>
                         <field name="rate"/>
                         <field name="currency_id_rate"/>
                         <field name="total_fees"/>

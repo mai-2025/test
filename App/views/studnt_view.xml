@@ -8,6 +8,7 @@
             <field name="arch" type="xml">
                 <form>
                     <sheet>
+
                         <!--div class="oe_title">
                             <label for="example_title"/>
                             <h1>
@@ -69,13 +70,5 @@
 
           <menuitem name="Student" id="student_menu_sub_id" parent="book_menu_id"
                   action="student_action_id"/>
-
-            <record id="action_report_multiple_students" model="ir.actions.report">
-    <field name="name"> Students Report</field>
-    <field name="model">student</field> <!-- Your student model -->
-    <field name="report_type">qweb-html</field>
-    <field name="report_name">student.report_student_template</field>
-    <field name="print_report_name">Students Report</field>
-</record>
- </data>
+    </data>
 </odoo>

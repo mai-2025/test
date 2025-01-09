@@ -7,7 +7,7 @@
     'author': 'Author',
     'website': 'website',
     #'license': 'License',
-    'depends': ['base_setup','hr','sale'],
+    'depends': ['base_setup','hr','sale','web'],
     'data': [
        'security/ir.model.access.csv',
        'security/library_view_group.xml',
