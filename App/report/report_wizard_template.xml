@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Report Action -->
+    <record id="report_1_id" model="ir.actions.report">
+        <field name="name">Sudent Ber Collage Report</field>
+        <field name="model">student</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">App.report_template</field>
+        <field name="binding_model_id" ref="App.model_report_wizard"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- Report Template -->
+    <template id="report_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+            <h1><span t-esc="docs[0].company_id.name"/></h1>
+                <div class="page">
+<table border="1" cellspacing="0" cellpadding="5" style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th>Student Code</th>
+                            <th>Student Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="docs" t-as="o">
+                            <tr>
+                                <td><span t-esc="o.st_code"/></td>
+                                <td><span t-esc="o.st_name"/></td>
+                                <!--td><span t-esc="o.company_id.name"/></td-->
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

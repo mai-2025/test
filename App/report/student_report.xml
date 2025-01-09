@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="action_report_multiple_students" model="ir.actions.report">
+    <field name="name"> Students Report</field>
+    <field name="model">student</field> <!-- Your student model -->
+    <field name="report_type">qweb-html</field>
+    <field name="report_name">App.report_student_template_id</field>
+    <field name="print_report_name">Student Info</field>
+<field name="binding_model_id" ref="model_student"/>
+    <field name="binding_type">report</field>
+</record>
+
+
+        <template id="report_student_template_id">
+    <t t-name="report_student_template">
+          <h2>Student Information</h2>
+        <t t-foreach="docs" t-as="doc">
+            <div class="page">
+
+                <table class="table table-bordered">
+                    <tr>
+                        <td>Name:</td>
+                        <td><span t-esc="doc.st_name"/></td>
+                    </tr>
+                    <tr>
+                        <td>Code:</td>
+                        <td><span t-esc="doc.st_code"/></td>
+                    </tr>
+                    <tr>
+                        <td>Collage:</td>
+                        <td><span t-esc="doc.company_id.name"/></td>
+                    </tr>
+
+                </table>
+
+                <!-- Page Break if necessary for multiple students -->
+                <!--t t-if="not loop.last">
+                    <div class="page-break"></div>
+                </t-->
+                 </div>
+
+        </t>
+
+    </t>
+</template>
+
+
+    </data>
+</odoo>
