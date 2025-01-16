@@ -7,7 +7,7 @@
     'author': 'Author',
     'website': 'website',
     #'license': 'License',
-    'depends': ['base_setup','hr','sale','web'],
+    'depends': ['base_setup','hr','sale','website'],
     'data': [
        'security/ir.model.access.csv',
        'security/library_view_group.xml',
@@ -19,6 +19,7 @@
         'wizard/report_wizard.xml',
         'report/student_report.xml',
         'report/report_wizard_template.xml',
+        'views/controller_view.xml',
              ],
     'demo': ['Demo'],
     'installable': True,

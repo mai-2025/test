@@ -20,6 +20,7 @@
                                 <field name="st_code"/>
                               <field name="company_id"   />
                                 <field name="book_ids" widget="many2many_tags"/>
+                                <field name="code" />
 
                             </group>
 

@@ -1,17 +1,27 @@
-
 from odoo import models,fields,api
+from odoo.addons.test_convert.tests.test_env import record
 from odoo.exceptions import UserError ,ValidationError
 from datetime import date
+import logging
+_logger = logging.getLogger(__name__)
+
+from ..controller import integration_api
+
 
 class LIB(models.Model):
     _name ='book.book'
     _description = "Book"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
+
     name=fields.Char()
     book_code=fields.Integer()
     due_date=fields.Date()
     is_due=fields.Boolean()
     active =fields.Boolean(default=True)
     student_id=fields.Many2one('student')
+    note=fields.Text()
+    country_id=fields.Many2one('res.country')
+    degree = fields.Float("Temperature (°C)")
     category_ids = fields.Many2many(
         'hr.employee.category', 'employee_category_rel_rel',
         'emp_id', 'category_id',
@@ -41,3 +51,10 @@ class LIB(models.Model):
         for rec in due_books:
             print(rec)
             rec.is_due = True
+
+    def send_get_request(self):
+        url = 'https://api.weatherstack.com/current?access_key={bd99e44e43df364fe0e35779bfc047c7}'
+        api = integration_api.APIIntegration()
+        res=api.get_current_location(url)
+        print('FFFFFFFFFFF',res)
+        self.note = res

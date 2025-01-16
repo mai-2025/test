@@ -6,7 +6,7 @@
         <field name="model">student.payment</field>
         <field name="arch" type="xml">
             <form string="Student Payment">
-                                 <!--field name="state" widget="status_bar"/-->
+                <field name="state" widget="status_bar"/>
                 <header >
                     <button name="confirm" type="object" string="Confirm"></button>
                 </header>

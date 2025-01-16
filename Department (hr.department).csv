@@ -1,0 +1,9 @@
+id,name,manager_id,
+hr.dep_administration,Administration,Mitchell Admin,"INSERT INTO hr_department (name, manager_id) VALUES ('Administration', Mitchell Admin);"
+__export__.hr_department_9_ffb01599,Core,,"INSERT INTO hr_department (name, manager_id) VALUES ('Core', );"
+hr.dep_rd_ltp,Long Term,Paul Williams,"INSERT INTO hr_department (name, manager_id) VALUES ('Long Term', Paul Williams);"
+__export__.hr_department_13_545f5293,Management,,"INSERT INTO hr_department (name, manager_id) VALUES ('Management', );"
+hr.dep_ps,Professional Services,Tina Williamson,"INSERT INTO hr_department (name, manager_id) VALUES ('Professional Services', Tina Williamson);"
+hr.dep_rd_be,R&D USA,Ronnie Hart,"INSERT INTO hr_department (name, manager_id) VALUES ('R&D USA', Ronnie Hart);"
+__export__.hr_department_16_6e839987,Research & Development,,"INSERT INTO hr_department (name, manager_id) VALUES ('Research & Development', );"
+hr.dep_sales,HR 2,Jeffrey Kelly,"INSERT INTO hr_department (name, manager_id) VALUES ('HR 2', Jeffrey Kelly);"

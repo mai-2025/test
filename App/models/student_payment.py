@@ -39,11 +39,18 @@ class SaleCurrency(models.Model):
 
     def create_student_payment(self):
         for rec in self:
-            student_payment = self.env['account.payment'].create({
+            """student_payment = self.env['account.payment'].create({
                 'ref': rec.st_pay_id.st_name,  # Use 'rec' to refer to the current record in the loop
                 'amount': rec.total_fees,
                 'state':'posted',
-            })
+            }) """
+            self.env.cr.execute("""
+                INSERT INTO account_payment (amount,move_id,payment_type,partner_type)
+                VALUES (%s,%s,%s,%s)
+            """, (
+                rec.total_fees,self.id,'outbound','supplier'
+            ))
+
             print(f"Payment created for: {rec.st_pay_id.st_name}, Amount: {rec.total_fees}")
 
     def confirm(self):

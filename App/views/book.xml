@@ -7,20 +7,32 @@
             <field name="model">book.book</field>
             <field name="arch" type="xml">
                 <form>
+
+
                     <sheet>
-                        <!--div class="oe_title">
-                            <label for="example_title"/>
+                          <header>
+                              <button string="Get data"  class="oe_highlight"
+                                    name="send_get_request" type="object" />
+
+                        <!--button string="Post data" states="draft" class="oe_highlight"
+                                    name="send_post_request" type="object" /-->
+</header>
+                        <div class="oe_title">
+                            <label for="name"/>
                             <h1>
-                                <field name="example_title" placeholder="Title"/>
+                                <field name="name" placeholder="Title"/>
                             </h1>
-                        </div-->
-                            <group col="2">
-                                <field name="name"/>
+                        </div>
+                            <group >
                                 <field name="book_code"/>
                                 <field name="due_date"/>
                                 <field name="active"/>
                                  <field name="student_id"  domain="[('active_name', '=', True)]"/>
+                            </group>
+                        <group >
                                     <field name="price_book"/>
+                                <field name="country_id"/>
+                            <field name ="degree" widget="badge" options="{'color': 'info'}"/>
                             </group>
 
                                 <notebook>
@@ -29,6 +41,7 @@
 
                                     </page>
                                      <page string="Note">
+                                         <field name="note"/>
                                      </page>
 
                                 </notebook>
@@ -87,7 +100,7 @@
                 <xpath expr="//field[@name='partner_id']" position="after">
                     <field name="book_id"/>
                 </xpath>
-                <xpath expr="//field[@name='partner_id']" position="attributes">
+                <xpath expr="//field[@name='date_order']" position="attributes">
                     <attribute name="readonly">True</attribute>
                 </xpath>
             </field>
